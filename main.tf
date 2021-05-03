@@ -76,18 +76,6 @@ resource "ibm_is_instance" "instance2" {
   resource_group = "${data.ibm_resource_group.rg.id}"
 }
 
-resource "ibm_is_floating_ip" "floatingip1" {
-  name = "fip1"
-  target = "${ibm_is_instance.instance1.primary_network_interface.0.id}"
-  resource_group = "${data.ibm_resource_group.rg.id}"
-}
-
-resource "ibm_is_floating_ip" "floatingip2" {
-  name = "fip2"
-  target = "${ibm_is_instance.instance2.primary_network_interface.0.id}"
-  resource_group = "${data.ibm_resource_group.rg.id}"
-}
-
 resource "ibm_is_security_group_rule" "sg1_tcp_rule_22" {
   depends_on = ["ibm_is_floating_ip.floatingip1", "ibm_is_floating_ip.floatingip2"]
   group     = "${ibm_is_vpc.vpc1.default_security_group}"
