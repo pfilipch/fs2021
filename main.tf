@@ -17,7 +17,6 @@ resource "ibm_is_vpc_address_prefix" "vpc-ap1" {
   zone = "${var.zone1}"
   vpc  = "${ibm_is_vpc.vpc1.id}"
   cidr = "${var.zone1_cidr}"
-  resource_group = "${data.ibm_resource_group.rg.id}"
 }
 
 resource "ibm_is_vpc_address_prefix" "vpc-ap2" {
@@ -25,7 +24,6 @@ resource "ibm_is_vpc_address_prefix" "vpc-ap2" {
   zone = "${var.zone2}"
   vpc  = "${ibm_is_vpc.vpc1.id}"
   cidr = "${var.zone2_cidr}"
-  resource_group = "${data.ibm_resource_group.rg.id}"
 }
 
 resource "ibm_is_subnet" "subnet1" {
@@ -99,7 +97,6 @@ resource "ibm_is_security_group_rule" "sg1_tcp_rule_22" {
     port_min = "22"
     port_max = "22"
   }
-  resource_group = "${data.ibm_resource_group.rg.id}"
 }
 
 resource "ibm_is_security_group_rule" "sg1_tcp_rule_80" {
