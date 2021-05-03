@@ -1,5 +1,5 @@
 data "ibm_resource_group" "rg" {
-  name = var.resource_group
+  name = "${var.resource_group}"
 }
 
 data "ibm_is_ssh_key" "sshkey1" {
