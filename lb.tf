@@ -1,7 +1,3 @@
-data "ibm_resource_group" "rg" {
-  name = "${var.resource_group}"
-}
-
 resource "ibm_is_lb" "lb1" {
   name = "${var.vpc_name}-lb"
   subnets = ["${ibm_is_subnet.subnet1.id}","${ibm_is_subnet.subnet2.id}"]
