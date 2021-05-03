@@ -6,8 +6,7 @@ data "template_cloudinit_config" "cloud-init-apptier" {
 #cloud-config
 packages:
   - nginx
-runcmd:
-  - echo "<html><head><title> Hello World!</title></head><body><H1> This is your webserver </H1></body></html>" > /var/www/html/index.html
+
 EOF
   }
 }

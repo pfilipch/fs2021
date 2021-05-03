@@ -9,7 +9,7 @@ variable "ibmcloud_region" {
 }
 
 variable "vpc_name" {
-  default = "vpc-fs2021-vpc-lab"
+  default = "vpc-fs2020-lab"
   description = "Name of your VPC"
 }
 
@@ -23,52 +23,27 @@ variable "zone2" {
   description = "Define the 2nd zone of the region"
 }
 
-variable "zone3" {
-  default = "us-south-3"
-  description = "Define the 2nd zone of the region"
-}
-
 variable "zone1_cidr" {
-  default = "10.10.0.0/24"
+  default = "172.16.1.0/24"
   description = "CIDR block to be used for zone 1"
 }
 
 variable "zone2_cidr" {
-  default = "10.20.0.0/24"
+  default = "172.16.2.0/24"
   description = "CIDR block to be used for zone 2"
 }
 
-variable "zone3_cidr" {
-  default = "10.30.0.0/24"
-  description = "CIDR block to be used for zone 2"
+variable "ssh_key_name" {
+  default = ""
+  description = "Name of existing VPC SSH Key"
 }
 
-variable "subnet1-name" {
-  default = "fs2021-vpc-lab-sn1"
-  description = "Name to be used for subnet 1"
+variable "image" {
+  default = "r006-14140f94-fcc4-11e9-96e7-a72723715315"
+  description = "OS Image ID to be used for virtual instances"
 }
 
-variable "subnet2-name" {
-  default = "fs2021-vpc-lab-sn2"
-  description = "Name to be used for subnet 2"
-}
-
-variable "subnet3-name" {
-  default = "fs2021-vpc-lab-sn3"
-  description = "Name to be used for subnet 3"
-}
-
-variable "subnet1-pg-name" {
-  default = "fs2021-vpc-sn1-pg"
-  description = "Name to be used for subnet1 public gateway"
-}
-
-variable "subnet2-pg-name" {
-  default = "fs2021-vpc-sn2-pg"
-  description = "Name to be used for subnet2 public gateway"
-}
-
-variable "subnet3-pg-name" {
-  default = "fs2021-vpc-sn3-pg"
-  description = "Name to be used for subnet2 public gateway"
+variable "profile" {
+  default = "cx2-2x4"
+  description = "Instance profile to be used for virtual instances"
 }
